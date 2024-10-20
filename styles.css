@@ -1,0 +1,434 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+/* Header Styles */
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: white;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #000428;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000428;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Hover effect for the links */
+nav ul li a:hover {
+    background-color: #ff5a5a;
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Adding underlining animation */
+nav ul li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #ff5a5a;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+nav ul li:hover::after {
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Fullscreen background video */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Send video behind content */
+    filter: brightness(60%); /* Darken video slightly for better text visibility */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Content appears above the video */
+    animation: fadeIn 1.5s ease-in-out forwards; /* Initial fade-in animation */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    animation: slideInFromLeft 1.5s ease-in-out forwards;
+    color: #000428;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: slideInFromRight 1.5s ease-in-out forwards;
+    color: #000428;
+}
+
+
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+    .hero-btn {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Sections */
+/* About Section Styling */
+#about {
+    padding: 100px 0;
+    background-color: #f9f9f9;
+}
+
+#about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex-basis: 55%;
+    padding: 20px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-text .highlight {
+    color: #ff5a5a;
+    font-weight: bold;
+}
+
+.about-text .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #ff5a5a;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.about-text .btn:hover {
+    background-color: #ff2a2a;
+}
+
+.about-image {
+    flex-basis: 40%;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Adding subtle animations */
+#about h2 {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.about-text p {
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.about-image img {
+    animation: fadeInRight 1.3s ease-in-out;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image, .about-text {
+        flex-basis: 100%;
+    }
+    .about-text {
+        padding: 0;
+    }
+}
+
+
+/* Portfolio Items */
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio-items .item {
+    flex: 1 1 300px;
+    margin: 20px;
+}
+
+.portfolio-items .item video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.portfolio-items .item h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Testimonials */
+.testimonials-container blockquote {
+    font-style: italic;
+    margin: 20px 0;
+    position: relative;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #000428;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+/* Contact Form */
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 11.5px 18px;
+    transition: all 0.2s ease;
+    border: 3px solid #552da8;
+    border-radius: 50px;
+    background: #552da8;
+    cursor: pointer;
+  }
+  
+  .cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    border-radius: 50px;
+    background: white;
+    width: 45px;
+    height: 45px;
+    transition: all 0.8s ease;
+  }
+  
+  .cta span {
+    position: relative;
+    font-family: Montserrat;
+    font-size: 18px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+  
+  .cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: white;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.5s ease;
+  }
+  
+  .cta:hover:before {
+    width: 100%;
+    background: #1c1c1c;
+  }
+  
+  .cta:hover svg {
+    transform: translateX(0);
+    transition: all 2s ease;
+  }
+  
+  .cta:active {
+    transform: scale(0.95);
+    transition: all 2s ease;
+  }
+  
+
+/* Animations */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
